@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.gun.board.dao.MessageDAO">
 	<insert id="sendMessage" parameterType="Message">
 		insert into board_message
-		(message_num, cus_id,friend_id,message_title,message,cus_status,friend_status)
-		values(BOARD_MESSAGE_SEQ.NEXTVAL, #{cus_id},#{friend_id},#{message_title},#{message},'sent','receive')
+		(message_num, cus_id,friend_id,message_title,message,cus_status,friend_status,board_num)
+		values(BOARD_MESSAGE_SEQ.NEXTVAL, #{cus_id},#{friend_id},#{message_title},#{message},'sent','receive',#{board_num})
 	</insert>
 	<select id="getMessage" parameterType="Map" resultType="Message">
 		select* from board_message

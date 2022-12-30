@@ -48,7 +48,8 @@
 				"cus_id":${loginid},
 				"friend_id":${trader.friend_id},
 				"message_title":$("#message_title").val(),
-				"message":$("#message").val()
+				"message":$("#message").val(),
+				"board_num":${trader.board_num}
 			},
 			success:function(friend_id){
 				alert(friend_id+"님에게 메세지를 전송하였습니다");
@@ -81,7 +82,7 @@
 						</tr>
 					</table>
 					<br> <input type="button" id="send"
-						value="보내기" class="btn btn-default">
+						value="➡️보내기" class="btn btn-default">
 				</div>
 			</div>
 		</div>

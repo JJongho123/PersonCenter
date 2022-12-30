@@ -128,7 +128,7 @@ public class BoardController {
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
 	public String getBoard(Model model, int page, String friend_id, int board_num) {
 		String loginid = (String) session.getAttribute("loginid");
-
+		
 		Board board = bRepository.getBoard(board_num);
 		
 		// 작성자는 자신이 작성한 글의 조회수를 올리지 못한다

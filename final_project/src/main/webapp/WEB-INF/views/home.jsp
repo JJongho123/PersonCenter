@@ -121,89 +121,90 @@
 					</div>
 					<!-- 배너 끝 -->
 
-				<div class="row na-row">
-                  <!-- 자유게시판 -->
-                  <div class="col-md-4 na-col">
+					<div class="row na-row">
+						<!-- 자유게시판 -->
+						<div class="col-md-4 na-col">
 
-                     <!-- 위젯 시작 { -->
-                     <h3 class="h3 f-lg en">
-                        <a href="${pageContext.request.contextPath}/boards_free"> <span
-                           class="float-right more-plus"></span> 자유게시판
-                        </a>
-                     </h3>
-                     <hr class="hr" />
-                     <div class="mt-3 mb-4">
-                        <ul class="na-list mt-n1">
-                           <c:forEach var="item" items="${boards_free}" varStatus="status">
-                              <li class="px-3 px-sm-0">
-                                 <div class="na-title">
-                                    <div
-                                       class="float-right text-muted f-sm font-weight-normal ml-2">
-                                       <span class="sr-only">등록일</span>
-                                       <fmt:formatDate pattern="MM.dd" value="${item.board_date}" />
+							<!-- 위젯 시작 { -->
+							<h3 class="h3 f-lg en">
+								<a href="${pageContext.request.contextPath}/boards_free"> <span
+									class="float-right more-plus"></span> 자유게시판
+								</a>
+							</h3>
+							<hr class="hr" />
+							<div class="mt-3 mb-4">
+								<ul class="na-list mt-n1">
+									<c:forEach var="item" items="${boards_free}" varStatus="status">
+										<li class="px-3 px-sm-0">
+											<div class="na-title">
+												<div
+													class="float-right text-muted f-sm font-weight-normal ml-2">
+													<span class="sr-only">등록일</span>
+													<fmt:formatDate pattern="MM.dd" value="${item.board_date}" />
 
-                                    </div>
-                                    <div class="na-item">
-                                       <a
-                                          href="${pageContext.request.contextPath}/boards_free/get?board_num=${item.board_num}&page=${page}"
-                                          class="na-subject"> <span class="rank-icon en bg-red">${status.count}</span>
-                                          ${item.board_title}
-                                       </a>
-                                    </div>
-                                 </div>
-                              </li>
-                           </c:forEach>
-                        </ul>
-                     </div>
-                     <!-- } 위젯 끝-->
+												</div>
+												<div class="na-item">
+													<a
+														href="${pageContext.request.contextPath}/boards_free/get?board_num=${item.board_num}&page=${page}"
+														class="na-subject"> <span class="rank-icon en bg-red">${status.count}</span>
+														${item.board_title}
+													</a>
+												</div>
+											</div>
+										</li>
+									</c:forEach>
+								</ul>
+							</div>
+							<!-- } 위젯 끝-->
 
-                  </div>
+						</div>
 
-                  <!-- 정보게시판 -->
-                  <div class="col-md-4 na-col">
+						<!-- 정보게시판 -->
+						<div class="col-md-4 na-col">
 
-                     <!-- 위젯 시작 { -->
-                     <h3 class="h3 f-lg en">
-                        <a href="${pageContext.request.contextPath}/boards_data"> <span
-                           class="float-right more-plus"></span> 정보게시판
-                        </a>
-                     </h3>
-                     <hr class="hr" />
-                     <div class="mt-3 mb-4">
-                        <ul class="na-list mt-n1">
-                           <c:forEach var="item" items="${boards_data}" varStatus="status">
-                              <li class="px-3 px-sm-0">
-                                 <div class="na-title">
-                                    <div
-                                       class="float-right text-muted f-sm font-weight-normal ml-2">
-                                       <span class="sr-only">등록일</span>
-                                       <fmt:formatDate pattern="MM.dd" value="${item.board_date}" />
+							<!-- 위젯 시작 { -->
+							<h3 class="h3 f-lg en">
+								<a href="${pageContext.request.contextPath}/boards_data"> <span
+									class="float-right more-plus"></span> 정보게시판
+								</a>
+							</h3>
+							<hr class="hr" />
+							<div class="mt-3 mb-4">
+								<ul class="na-list mt-n1">
+									<c:forEach var="item" items="${boards_data}" varStatus="status">
+										<li class="px-3 px-sm-0">
+											<div class="na-title">
+												<div
+													class="float-right text-muted f-sm font-weight-normal ml-2">
+													<span class="sr-only">등록일</span>
+													<fmt:formatDate pattern="MM.dd" value="${item.board_date}" />
 
-                                    </div>
-                                    <div class="na-item">
-                                       <a
-                                          href="${pageContext.request.contextPath}/boards_data/get?board_num=${item.board_num}&page=${page}"
-                                          class="na-subject"> <span class="rank-icon en bg-orange">${status.count}</span>
-                                          ${item.board_title}
-                                       </a>
-                                    </div>
-                                 </div>
-                              </li>
-                           </c:forEach>
-                        </ul>
-                     </div>
-                     <!-- } 위젯 끝-->
+												</div>
+												<div class="na-item">
+													<a
+														href="${pageContext.request.contextPath}/boards_data/get?board_num=${item.board_num}&page=${page}"
+														class="na-subject"> <span
+														class="rank-icon en bg-orange">${status.count}</span>
+														${item.board_title}
+													</a>
+												</div>
+											</div>
+										</li>
+									</c:forEach>
+								</ul>
+							</div>
+							<!-- } 위젯 끝-->
 
-                  </div>
+						</div>
 
 						<!-- # -->
 						<div class="col-md-4 na-col">
 
 							<!-- 위젯 시작 { -->
 							<h3 class="h3 f-lg en">
-								<a href="${pageContext.request.contextPath}/boards_auction"> <span
-                           class="float-right more-plus"></span> 경매게시판
-                        </a>
+								<a href="${pageContext.request.contextPath}/boards_auction">
+									<span class="float-right more-plus"></span> 경매게시판
+								</a>
 							</h3>
 							<hr class="hr" />
 							<div class="mt-3 mb-4">
@@ -220,7 +221,8 @@
 												<div class="na-item">
 													<a
 														href="${pageContext.request.contextPath}/boards_auction/get?board_num=${item.board_num}&page=${page}"
-														class="na-subject"> <span class="rank-icon en bg-green">${status.count}</span>
+														class="na-subject"> <span
+														class="rank-icon en bg-green">${status.count}</span>
 														${item.board_title}
 													</a>
 												</div>
@@ -332,8 +334,9 @@
 						<!-- 여기부터 거래글1  -->
 						<div class="col-md-4 na-col">
 							<h3 class="h3 f-lg en">
-								<a href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=1"> <span
-									class="float-right more-plus"></span>게시판 1
+								<a
+									href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=1">
+									<span class="float-right more-plus"></span>게시판 1
 								</a>
 							</h3>
 							<hr class="hr" />
@@ -365,8 +368,9 @@
 						<!-- 여기부터 거래글1  -->
 						<div class="col-md-4 na-col">
 							<h3 class="h3 f-lg en">
-								<a href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=2"> <span
-									class="float-right more-plus"></span>게시판 2
+								<a
+									href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=2">
+									<span class="float-right more-plus"></span>게시판 2
 								</a>
 							</h3>
 							<hr class="hr" />
@@ -398,8 +402,9 @@
 						<!-- 여기부터 거래글1  -->
 						<div class="col-md-4 na-col">
 							<h3 class="h3 f-lg en">
-								<a href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=3"> <span
-									class="float-right more-plus"></span>게시판 3
+								<a
+									href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=3">
+									<span class="float-right more-plus"></span>게시판 3
 								</a>
 							</h3>
 							<hr class="hr" />
@@ -434,8 +439,9 @@
 						<!-- 여기부터 거래글1  -->
 						<div class="col-md-4 na-col">
 							<h3 class="h3 f-lg en">
-								<a href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=4"> <span
-									class="float-right more-plus"></span>게시판 4
+								<a
+									href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=4">
+									<span class="float-right more-plus"></span>게시판 4
 								</a>
 							</h3>
 							<hr class="hr" />
@@ -467,8 +473,9 @@
 						<!-- 여기부터 거래글1  -->
 						<div class="col-md-4 na-col">
 							<h3 class="h3 f-lg en">
-								<a href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=5"> <span
-									class="float-right more-plus"></span>게시판 5
+								<a
+									href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=5">
+									<span class="float-right more-plus"></span>게시판 5
 								</a>
 							</h3>
 							<hr class="hr" />
@@ -500,8 +507,9 @@
 						<!-- 여기부터 거래글1  -->
 						<div class="col-md-4 na-col">
 							<h3 class="h3 f-lg en">
-								<a href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=6"> <span
-									class="float-right more-plus"></span>게시판 6
+								<a
+									href="${pageContext.request.contextPath}/boards_transaction/transaction?board_category_name=6">
+									<span class="float-right more-plus"></span>게시판 6
 								</a>
 							</h3>
 							<hr class="hr" />
@@ -522,7 +530,9 @@
 														href="${pageContext.request.contextPath}/boards/get?board_num=${item.board_num}&page=${page}"
 														class="na-subject"> ${item.board_title} </a>
 												</div>
+
 											</div>
+
 										</li>
 									</c:forEach>
 								</ul>
@@ -596,7 +606,8 @@
 								<div class="d-flex align-items-center mb-3">
 									<div class="pr-3">
 										<a> <c:if test="${!empty customer}">
-												<img src="${pageContext.request.contextPath}/customer/download"
+												<img
+													src="${pageContext.request.contextPath}/customer/download"
 													class="rounded-circle" style="width: 60px; height: 60px;">
 											</c:if> <c:if test="${empty customer}">
 												<img
@@ -643,7 +654,6 @@
 						<ul class="na-list mt-n1">
 							<li class="px-3 px-sm-0"><c:forEach var="item"
 									items="${Notice_boards}">
-
 									<div class="na-title">
 										<div
 											class="float-right text-muted f-sm font-weight-normal ml-2">
@@ -700,67 +710,35 @@
 					<div class="mt-3 mb-4">
 
 						<ul class="na-list mt-n1">
-							<li class="px-3 px-sm-0">
-								<div class="na-title">
-									<div
-										class="float-right text-muted f-sm font-weight-normal ml-2">
-										<span class="sr-only">등록일</span> 11.26
+							<li class="px-3 px-sm-0"><c:forEach var="item"
+									items="${union}">
+									<div class="na-title">
+										<div
+											class="float-right text-muted f-sm font-weight-normal ml-2">
+											<span class="sr-only">등록일</span>
+											<fmt:formatDate pattern="HH:mm" value="${item.board_date}" />
+										</div>
+										<div class="na-item">
+											<a
+												href=
+												<c:if test="${item.board_check eq 1}">
+													"${pageContext.request.contextPath}/boards/get?board_num=${item.board_num}&page=${page}"
+												 </c:if>
+												 <c:if test="${item.board_check eq 2}">
+													"${pageContext.request.contextPath}/boards_data/get?board_num=${item.board_num}&page=${page}"
+												 </c:if>
+												 <c:if test="${item.board_check eq 3}">
+													"${pageContext.request.contextPath}/notice/get?board_num=${item.board_num}&page=${page}"
+												 </c:if>
+												 
+												 
+												class="na-subject"> ${item.board_title} </a>
+										</div>
 									</div>
-									<div class="na-item">
-										<a href="#" class="na-subject"> 한류의 진화, 일본 MZ세대의 한국 열풍 </a>
-									</div>
-								</div>
-							</li>
-							<li class="px-3 px-sm-0">
-								<div class="na-title">
-									<div
-										class="float-right text-muted f-sm font-weight-normal ml-2">
-										<span class="sr-only">등록일</span> 11.19
-									</div>
-									<div class="na-item">
-										<a href="#" class="na-subject"> 맥도날드 월드컵광고 feat ITZY </a>
-									</div>
-								</div>
-							</li>
-							<li class="px-3 px-sm-0">
-								<div class="na-title">
-									<div
-										class="float-right text-muted f-sm font-weight-normal ml-2">
-										<span class="sr-only">등록일</span> 11.15
-									</div>
-									<div class="na-item">
-										<a href="#" class="na-subject"> 심슨가족이 부르는 블랙핑크 </a>
-									</div>
-								</div>
-							</li>
-							<li class="px-3 px-sm-0">
-								<div class="na-title">
-									<div
-										class="float-right text-muted f-sm font-weight-normal ml-2">
-										<span class="sr-only">등록일</span> 11.13
-									</div>
-									<div class="na-item">
-										<a href="#" class="na-subject"> 코빗에서 작성한 Alameda Research
-											/ FTX 유동성 사태 현황 보고서 입니다 </a>
-									</div>
-								</div>
-							</li>
-							<li class="px-3 px-sm-0">
-								<div class="na-title">
-									<div
-										class="float-right text-muted f-sm font-weight-normal ml-2">
-										<span class="sr-only">등록일</span> 10.28
-									</div>
-									<div class="na-item">
-										<a href="#" class="na-subject"> 너무 잔혹해서, 칼리스토 프로토콜 日 발매 취소
-										</a>
-									</div>
-								</div>
-							</li>
 
-						</ul>
-
-					</div>
+								</c:forEach></li>
+							</ul>
+						</div>
 					<!-- } 위젯 끝-->
 
 				</div>
@@ -771,4 +749,4 @@
 
 </body>
 </html>
-<%@ include file="/WEB-INF/views/include/footer.jsp" %>
+<%@ include file="/WEB-INF/views/include/footer.jsp"%>

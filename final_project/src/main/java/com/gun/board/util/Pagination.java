@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import com.gun.board.vo.Board;
 import com.gun.board.vo.Customer;
 import com.gun.board.vo.Message;
+import com.gun.board.vo.Union;
 
 public class Pagination {
-	// ÆäÀÌÂ¡Ã³¸® À§ÇÑ Å¬·¡½º
+	// ï¿½ï¿½ï¿½ï¿½Â¡Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 
-	// È¨¿¡ ³ªÅ¸³¾ °Ô½Ã¹°(7°³¾¿ ÀÚ¸¥ °Í)
+	// È¨ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½Ô½Ã¹ï¿½(7ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¸ï¿½ ï¿½ï¿½)
 	public ArrayList<Board> totalPosts_home(ArrayList<Board> boards, int page) {
 		ArrayList<Board> result = new ArrayList();
 		int startPost = (page - 1) * Configuration.POSTS_HOME;
@@ -23,7 +24,7 @@ public class Pagination {
 		return result;
 	}
 
-	// ÃÑ ÆäÀÌÁö °è»ê
+	// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	public int totalPages(ArrayList<Board> boards) {
 		int result = 0;
 		result = (boards.size() / Configuration.POSTS);
@@ -42,7 +43,7 @@ public class Pagination {
 		return result;
 	}
 
-	// ¸¶Áö¸· ÆäÀÌÁö ±¸ÇÏ±â
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
 	public int endPage(int page, int totalPages) {
 		int endPage = 0;
 		endPage = page + Configuration.PAGES;
@@ -52,7 +53,7 @@ public class Pagination {
 		return endPage;
 	}
 
-	// ÇÑ ÆäÀÌÁö¿¡ ³ªÅ¸³ª´Â °Ô½Ã±Û
+	// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½Ã±ï¿½
 	public ArrayList<Board> totalPosts(ArrayList<Board> boards, int page) {
 		ArrayList<Board> result = new ArrayList();
 		int startPost = (page - 1) * Configuration.POSTS;
@@ -79,7 +80,7 @@ public class Pagination {
 		return result;
 	}
 
-	// ÆäÀÌÁö ¼ö Á¶Á¤
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public int getCurrentPage(int page, int totalPages) {
 		if (page <= 0) {
 			page = 1;
@@ -89,7 +90,7 @@ public class Pagination {
 		return page;
 	}
 
-	// °ü¸®ÀÚ ÆäÀÌÁö ÆäÀÌÁö³×ÀÌ¼Ç Ãß°¡µÈ°Í
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ ï¿½ß°ï¿½ï¿½È°ï¿½
 	public static int cus_totalPages(ArrayList<Customer> customers) {
 		int result = 0;
 		result = (customers.size() / Configuration.POSTS);
@@ -128,6 +129,19 @@ public class Pagination {
 			endPage = totalPages;
 		}
 		return endPage;
+	}
+
+	public ArrayList<Union> totalPosts_uhome(ArrayList<Union> union, int page) {
+		ArrayList<Union> result = new ArrayList();
+		int startPost = (page - 1) * Configuration.POSTS_HOME;
+		int endPost = startPost + Configuration.POSTS_HOME;
+		if (endPost > union.size()) {
+			endPost = union.size();
+		}
+		for (int a = startPost; a < endPost; a++) {
+			result.add(union.get(a));
+		}
+		return result;
 	}
 
 }

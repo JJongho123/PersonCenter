@@ -22,6 +22,10 @@
 <link
 	href="${pageContext.request.contextPath}/resources/css/clean-blog.min.css"
 	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/write.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/read.css"
+	rel="stylesheet">
 </head>
 <body>
 	<!-- body 시작  -->
@@ -30,18 +34,7 @@
 	<!-- Page Header -->
 	<header class="masthead"
 		style="background-image: url('${pageContext.request.contextPath}/resources/img/home-bg.jpg')">
-		<div class="container">
-				<div class="col-lg-8 col-md-10 mx-auto">
-					<div class="site-heading">
-						<c:if test="${category=='read' }">
-							<span class="subheading"> 받은 메세지를 확인하세요 </span>
-						</c:if>
-						<c:if test="${category=='sent' }">
-							<span class="subheading"> 보낸 메세지를 확인하세요 </span>
-						</c:if>
-					</div>
-				</div>
-		</div>
+		
 	</header>
 	
 	<!-- 메인영역 -->
@@ -50,14 +43,16 @@
 			<div class="col-lg-8 col-md-10 mx-auto">
 				<div class="post-preview">
 					<c:if test="${category=='read' }">
-						<h2>${loginid }가&nbsp받은 메세지</h2>
+						<h2>${loginid }&nbsp 님이&nbsp받은 메세지</h2>
 					</c:if>
 					<c:if test="${category=='sent'}">
-						<h2>&nbsp${loginid}가&nbsp보낸 메세지</h2>
+						<h2>&nbsp${loginid}&nbsp 님이&nbsp보낸 메세지</h2>
 					</c:if>
 
 					<table class="table" cellpadding="10">
 						<tr>
+						<td>거래글번호</td>
+						
 							<td>제목</td>
 							<c:if test="${category=='read' }">
 								<td>보낸이</td>
@@ -74,6 +69,8 @@
 							<c:if
 								test="${category=='read'&&item.friend_status!='delete'||category=='sent'&&item.cus_status!='delete' }">
 								<tr>
+								<td>${item.board_num }</td>
+								
 									<td><a
 										href="${pageContext.request.contextPath}/message/get?message_num=${item.message_num}&category=${category}&page=${page}">${item.message_title }
 											<c:if

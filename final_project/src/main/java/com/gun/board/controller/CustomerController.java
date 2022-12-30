@@ -31,6 +31,7 @@ import com.gun.board.repository.FreeRepository;
 import com.gun.board.repository.FriendRepository;
 import com.gun.board.repository.MessageRepository;
 import com.gun.board.repository.NoticeRepository;
+import com.gun.board.repository.UnionRepository;
 import com.gun.board.util.Configuration;
 import com.gun.board.util.FileService;
 import com.gun.board.util.Pagination;
@@ -43,6 +44,7 @@ import com.gun.board.vo.Customer;
 import com.gun.board.vo.Data;
 import com.gun.board.vo.Free;
 import com.gun.board.vo.Notice;
+import com.gun.board.vo.Union;
 
 @RequestMapping(value = "/customer")
 @Controller
@@ -73,6 +75,9 @@ public class CustomerController {
 	
 	@Inject
 	AuctionRepository aRepository;
+	
+	@Inject
+	UnionRepository uRepository;
 
 	Pagination Pagination = new Pagination();
 	Pagination_Free Paginationf = new Pagination_Free();
@@ -246,6 +251,12 @@ public class CustomerController {
 			ArrayList<Auction> auction = aRepository.getAuction_home();
 			auction = Paginationa.totalPosts_home(auction, page);
 			model.addAttribute("auction", auction);
+			
+			// 최신글뽑기위한 전체게시판 통합
+			ArrayList<Union> union = uRepository.getUnion_home();
+			union = Pagination.totalPosts_uhome(union, page);
+			model.addAttribute("union", union);
+			
 			
 			return "home";
 		}

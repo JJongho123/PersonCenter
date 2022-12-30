@@ -341,7 +341,7 @@ function insertR_reply(reply_num){
 													</c:if>
 													
 													 <!-- 만약 판매자와 구매자가 상태가 친구라면 성공으로 표시하고 주소정보 불러오기 -->
-													<c:if test="${agree2=='successed'}">
+													<c:if test="${agree2=='successed' && loginid eq board.board_id}">
 													[구매자 정보]<br>
 													주소 : ${buyer_info.cus_addr} <br> 
 													우편번호 : ${buyer_info.cus_zip_code} <br> 

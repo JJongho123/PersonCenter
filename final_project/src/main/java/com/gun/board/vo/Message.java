@@ -1,29 +1,39 @@
 package com.gun.board.vo;
 
 public class Message {
-	// ¹øÈ£
+	// ï¿½ï¿½È£
 	private int message_num;
 
-	// º»ÀÎ
+	// ï¿½ï¿½ï¿½ï¿½
 	private String cus_id;
 
-	// »ó´ë¹æ
+	// ï¿½ï¿½ï¿½ï¿½
 	private String friend_id;
 
-	// Á¦¸ñ
+	// ï¿½ï¿½ï¿½ï¿½
 	private String message_title;
 
-	// ³»¿ë
+	// ï¿½ï¿½ï¿½ï¿½
 	private String message;
 
-	// »óÅÂ->³»°¡ º¸³ÂÀ» ‹š
+	// ï¿½ï¿½ï¿½ï¿½->ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 	private String cus_status;
 
-	// »ó´ë¹æÀÇ »óÅÂ->È®ÀÎÇß´ÂÁö ¾ÆÁ÷ È®ÀÎ ¾ÈÇß´ÂÁö
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½->È®ï¿½ï¿½ï¿½ß´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ ï¿½ï¿½ï¿½ß´ï¿½ï¿½ï¿½
 	private String friend_status;
 
-	// º¸³½ ³¯Â¥
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥
 	private String message_date;
+	
+	private int board_num;
+
+	public int getBoard_num() {
+		return board_num;
+	}
+
+	public void setBoard_num(int board_num) {
+		this.board_num = board_num;
+	}
 
 	public int getMessage_num() {
 		return message_num;
@@ -80,11 +90,11 @@ public class Message {
 	public void setCus_status(String cus_status) {
 		this.cus_status = cus_status;
 	}
-
+	
 	public String getFriend_status() {
 		return friend_status;
 	}
-
+	
 	public void setFriend_status(String friend_status) {
 		this.friend_status = friend_status;
 	}
@@ -93,6 +103,9 @@ public class Message {
 	public String toString() {
 		return "Message [message_num=" + message_num + ", cus_id=" + cus_id + ", friend_id=" + friend_id
 				+ ", message_title=" + message_title + ", message=" + message + ", cus_status=" + cus_status
-				+ ", friend_status=" + friend_status + ", message_date=" + message_date + "]";
+				+ ", friend_status=" + friend_status + ", message_date=" + message_date + ", board_num=" + board_num
+				+ "]";
 	}
+
+
 }
