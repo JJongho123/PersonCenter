@@ -15,13 +15,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>회원상세정보</title>
 <meta http-equiv="content-language" content="kr">
-
+<link
+	href="${pageContext.request.contextPath}/resources/css/clean-blog.min.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/write.css"
+	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/read.css"
+	rel="stylesheet">
 </head>
 <body class="responsive is-round">
    <div id="nt_sticky_wrap"></div>
-
-
-   <div id="nt_header">
+	 <div id="nt_header">
       <div id="nt_body" class="nt-body">
          <div class="nt-container my-3 my-sm-4 px-0 px-sm-4 px-xl-0">
             <div class="register m-auto f-de">
@@ -33,7 +37,7 @@
                      <li></li>
                      <li>ㅤ</li>
                      <li>ㅤ</li>
-                     <li><h5>회원상세정보</h5></li>
+                     <li> </li>
                      <li class="list-group-item pt-3 pt-sm-4">
 
                         <div class="form-group row">
@@ -43,8 +47,6 @@
                               class="rounded-circle" style="width: 60px; height: 60px;">
 
                         </div>
-
-
 
                         <div class="form-group row">
                            <label class="col-sm-2 col-form-label" for="reg_mb_id">아이디<strong
@@ -166,19 +168,17 @@
                               <div class="col-sm-4">
                                <input type="text" class="form-control" 
                                  id="cus_tel" name="cus_tel" value="${fn:substring(customer.cus_tel,0,3)}-${fn:substring(customer.cus_tel,3,7)}-${fn:substring(customer.cus_tel,7,11)}" readonly="readonly">
-								</div>
-                        </div>
+							</div>
+							</div>
+							
+							<div class="col">
+								<a href="${path}/admin" style="float:right; background-color: #d7ebc2; border-radius: 10px" class="btn btn-default">회원 목록</a>
+							</div>
                      </li>
                   </ul>
                   <div class="px-3 px-sm-0 mb-4">
                      <div class="row mx-n2">
-                        <div class="col-6 order-2 px-2">
-                           <button type="submit" value="Join Us" id="btn_submit"
-                              class="btn btn-primary btn-lg btn-block en">회원정보수정</button>
-                        </div>
-                        <div class="col-6 order-1 px-2">
-                           <a href="${path}/admin/adminView" class="btn btn-basic btn-lg btn-block en">회원목록보기</a>
-                        </div>
+                        
                      </div>
                   </div>
 
