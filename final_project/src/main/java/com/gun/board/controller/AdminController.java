@@ -25,6 +25,7 @@ import com.gun.board.vo.Customer;
 @RequestMapping(value = "/admin")
 @Controller
 
+
 public class AdminController {
 
 	@Inject

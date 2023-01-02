@@ -719,6 +719,8 @@
 											<fmt:formatDate pattern="HH:mm" value="${item.board_date}" />
 										</div>
 										<div class="na-item">
+										
+										<!-- 제목에 각각의 게시판으로 연결 시키는 링크 걸기 -->
 											<a
 												href=
 												<c:if test="${item.board_check eq 1}">
