@@ -1,5 +1,7 @@
 package com.gun.board.vo;
 
+import java.util.Date;
+
 public class Message {
 	// ��ȣ
 	private int message_num;
@@ -23,7 +25,7 @@ public class Message {
 	private String friend_status;
 
 	// ���� ��¥
-	private String message_date;
+	private Date message_date;
 	
 	private int board_num;
 
@@ -51,11 +53,11 @@ public class Message {
 		this.message_title = message_title;
 	}
 
-	public String getMessage_date() {
+	public Date getMessage_date() {
 		return message_date;
 	}
 
-	public void setMessage_date(String message_date) {
+	public void setMessage_date(Date message_date) {
 		this.message_date = message_date;
 	}
 

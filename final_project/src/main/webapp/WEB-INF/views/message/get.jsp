@@ -2,9 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
+<link href="${path}/resources/css/read.css" rel="stylesheet">
+<link href="${path}/resources/css/gun_custom.css" rel="stylesheet">
+
 <title>메세지 읽기</title>
 <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
 
@@ -29,16 +34,13 @@ function deleteMessage(){
 			});}
 }
 </script>
+
 <body>
-	
-	<!-- Page Header -->
-	<header class="masthead"
-		style="background-image: url('${pageContext.request.contextPath}/resources/img/home-bg.jpg')">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-md-10 mx-auto">
-					<div class="site-heading">
-						<c:if test="category=='read'">
+	<div id="nt_body" class="nt-body">
+		<div class="nt-container px-0 px-sm-4 px-xl-0 pt-0 pt-sm-4">
+			<div class="ArticleTopBtns">
+				<div class="right_area">
+					<c:if test="category=='read'">
 							<h1>Read Message</h1>
 							<span class="subheading">Read your Message </span>
 						</c:if>
@@ -46,72 +48,93 @@ function deleteMessage(){
 							<h1>Read Message</h1>
 							<span class="subheading">Read message you sent </span>
 						</c:if>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<!-- Main Content -->
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-md-10 mx-auto">
-				<div class="post-preview">
-					<c:if test="category=='read'">
-						<h2>메세지 읽기</h2>
-					</c:if>
-					<c:if test="category=='sent'">
-						<h2>받은 메세지 읽기</h2>
-					</c:if>
-					<table cellpadding="10">
-						<tr>
-							<td>제목</td>
-							<td>${message.message_title }</td>
-						</tr>
-						<tr>
-							<td>보낸이</td>
-							<td>${message.friend_id }</td>
-						</tr>
-						<tr>
-							<td>날짜</td>
-							<td>${message.message_date }</td>
-						</tr>
-						<tr>
-							<td>메세지</td>
-							<td>${message.message }</td>
-						</tr>
-						<tr>
-							<td><input type="button" value="Delete"
-								onClick="deleteMessage();" class="btn btn-default"> <input
-								type="button" value="to List"
+				
+						<a>
+						</a>
+						<input type="button" value="삭제"
+								onClick="deleteMessage();" class="BaseButton BaseButton--skinGray size_default"> <input
+								type="button" value="목록"
 								onclick="location.href='${pageContext.request.contextPath}/message/management?category=${category}&page=${page}'"
-								class="btn btn-default"></td>
-					</table>
-					<hr>
-					<br>
-				</div>
+								class="BaseButton BaseButton--skinGray size_default">
+								
+						<a href="${pageContext.request.contextPath}/message/messageView?board_num=${message.board_num}" 
+								class="link_talk win_password_lost BaseButton BaseButton--skinGray size_default">답장</a>
+						</div>
+				<div class="right_area"></div>
 			</div>
-		</div>
-	</div>
-	<!-- Footer -->
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-md-10 mx-auto">
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- Bootstrap core JavaScript -->
-	<script
-		src="${pageContext.request.contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/vendor/popper/popper.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-	<!-- Custom scripts for this template -->
-	<script
-		src="${pageContext.request.contextPath}/resources/js/clean-blog.min.js"></script>
+			<div class="ArticleContentBox">
+				<div class="article_header">
+					<div class="ArticleTitle">
+						
+						<a class="link_board"> 보낸이 : ${message.friend_id }</a>
+						<div class="title_area">
+							
+							<h3 class="title_text">${message.message_title}</h3>
+						</div>
+					</div>
+					<div class="WriterInfo">
+						<a href="/ca-fe/cafes/10050146/members/prkQguvG11zjC0KAkeAh_A"
+							class="thumb"><img
+							src="https://ssl.pstatic.net/static/cafe/cafe_pc/default/cafe_profile_77.png?type=c77_77"
+							alt="프로필 사진" width="36" height="36"></a>
+						<div class="profile_area">
+							<div class="profile_info">
+								<div class="nick_box">
+									<button id="writerInfodeancho0618" class="nickname">
+										${board.board_nickname}</button>
+								</div>
+								<em class="nick_level"> 열심회원 <i data-v-d34938e2=""
+									class="LevelIcon icon_level"
+									style="background-image: url(&quot;https://ca-fe.pstatic.net/web-pc/static/img/sprite_levelicon_9dbde2.svg#1_1-usage&quot;);"></i></em>
+								
+							</div>
+							<div class="article_info">
+
+								<span class="date"> 
+								<fmt:formatDate value="${message.message_date }" pattern="yyyy-MM-dd HH:mm:ss" />
+
+								</span> <span class="count">조회 ${board.board_hits }</span>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+				<div class="article_container">
+					<!---->
+					<!---->
+					<!---->
+					<!---->
+					<div class="article_viewer">
+						<div class="SaleInfo">
+							<div class="WarningNotice">
+							</div>
+						
+						</div>
+						</div >
+						<!---->
+					</div>
+					<!---->
+					<!--글 내용-->
+					${message.message}
+			
+					<div class="ReplyBox">
+						<div class="box_left">
+							<div class="like_article">
+								<!---->
+								<!---->
+							</div>
+						</div>
+						<div class="box_right"></div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	
+	<!-- .nt-body -->
+	<h3>ㅤ</h3>
 </body>
+
 </html>
+<%@ include file="../include/footer.jsp"%>

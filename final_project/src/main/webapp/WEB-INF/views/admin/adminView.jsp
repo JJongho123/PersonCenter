@@ -56,9 +56,9 @@
          <td><input type="checkbox" name="RowCheck"  value="${item.cus_id}"></td>
          	
             <td><a href="${pageContext.request.contextPath}/admin/detailView?customer_id=${item.cus_id}">${item.cus_id}</a></td>
-           
-            <td>${item.cus_gender}</td>
-            <td>${item.cus_nickname}</td>
+          
+           	<td>${item.cus_gender}</td>
+           	<td>${item.cus_nickname}</td>
             <td>${item.cus_bank}</td>
             <td>${fn:substring(item.cus_account,0,3)}-${fn:substring(item.cus_account,3,5)}-${fn:substring(item.cus_account,5,9)}-${fn:substring(item.cus_account,9,15)}</td>
             <td>${item.cus_zip_code}</td>

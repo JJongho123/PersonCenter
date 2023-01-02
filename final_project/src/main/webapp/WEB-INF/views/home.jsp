@@ -634,11 +634,8 @@
 									<a href="${pageContext.request.contextPath}/customer/vertify"
 										class="btn btn-primary text-white" role="button"> 내정보 </a> <a
 										href="${pageContext.request.contextPath}/customer/logout"
-										class="btn btn-primary text-white" role="button"> 로그아웃 </a> <a
-										href="${pageContext.request.contextPath}/customer/withdrawalView"
-										class="btn btn-primary text-white" role="button"> 회원탈퇴 </a>
+										class="btn btn-primary text-white" role="button"> 로그아웃 </a> 
 								</div>
-
 							</div>
 						</div>
 

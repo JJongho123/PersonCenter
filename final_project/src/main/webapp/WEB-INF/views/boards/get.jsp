@@ -221,14 +221,26 @@ function insertR_reply(reply_num){
 						<!-- 사진이 비어있다면 안나오게 -->
 							<c:if test="${!empty board.board_fileid }">
 								<div class="product_section">
-									<div class="ProductImage sold">
-										<div class="product_thumb">
-
-											<img
-												src="${pageContext.request.contextPath}/boards/download?board_num=${board.board_num}"
-												height="380" width="380">
-										</div>
-									</div>
+								
+							<c:if test="${status_seller eq 'friend' || status_buyer eq 'friend'|| board_status eq 'friend'}">
+                              <div class="ProductImage sold_out">
+                              <div class="product_thumb">
+                                 <img
+                                    src="${pageContext.request.contextPath}/boards/download?board_num=${board.board_num}"
+                                    height="380" width="380">
+                                    <div class="sold_area"> <span class="text">판매 완료</span></div>   
+                              </div>
+                           </div>
+                           </c:if>
+                           <c:if test="${status_seller ne 'friend' && status_buyer ne 'friend' && board_status ne 'friend'}">
+                           <div class="ProductImage sold">
+                              <div class="product_thumb">
+                                 <img
+                                    src="${pageContext.request.contextPath}/boards/download?board_num=${board.board_num}"
+                                    height="380" width="380">
+                              </div>
+                           </div>
+                           </c:if>
 									<div class="product_area">
 										<div class="product_detail">
 											<div class="product_detail_box">

@@ -37,6 +37,7 @@
 		
 	</header>
 	
+	
 	<!-- 메인영역 -->
 	<div class="container">
 		<div class="row">
@@ -75,7 +76,7 @@
 										href="${pageContext.request.contextPath}/message/get?message_num=${item.message_num}&category=${category}&page=${page}">${item.message_title }
 											<c:if
 												test="${item.friend_status=='receive'&&category=='read'||item.cus_status=='sent'&&category=='sent'}">
-												<span class="w3-badge w3-red">New</span>
+												<span class="badge badge-info">new</span>
 											</c:if>
 									</a></td>
 									<c:if test="${category=='read' }">
@@ -122,4 +123,4 @@
 
 </body>
 </html>
-<%@ include file="../include/footer.jsp" %>
+<%@ include file="/WEB-INF/views/include/footer.jsp"%>
